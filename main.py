@@ -2934,6 +2934,7 @@ def split_content_into_batches(
         return batches
 
     # 处理热点词汇统计
+    
     if report_data["stats"]:
         total_count = len(report_data["stats"])
 
@@ -2960,16 +2961,17 @@ def split_content_into_batches(
             # 构建词组标题
             word_header = ""
             if format_type == "wework":
-                if count >= 10:
-                    word_header = (
-                        f"🔥 {sequence_display} **{word}** : **{count}** 条\n\n"
-                    )
-                elif count >= 5:
-                    word_header = (
-                        f"📈 {sequence_display} **{word}** : **{count}** 条\n\n"
-                    )
-                else:
-                    word_header = f"📌 {sequence_display} **{word}** : {count} 条\n\n"
+                word_header = ""
+                # if count >= 10:
+                #     word_header = (
+                #         f"🔥 {sequence_display} **{word}** : **{count}** 条\n\n"
+                #     )
+                # elif count >= 5:
+                #     word_header = (
+                #         f"📈 {sequence_display} **{word}** : **{count}** 条\n\n"
+                #     )
+                # else:
+                #     word_header = f"📌 {sequence_display} **{word}** : {count} 条\n\n"
             elif format_type == "telegram":
                 if count >= 10:
                     word_header = f"🔥 {sequence_display} {word} : {count} 条\n\n"
